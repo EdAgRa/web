@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Potta+One&display=swap');
+
+ body{
+    font-family: Potta One, serif;
+    background-repeat: no-repeat;
+    background-size: cover;    
+ }
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-principal, .titulo-conbate{
+    color: #B31312;
+    font-size: 40px;
+    background: #f3d908;
+    height: 44px;
+    width: 251px;
+    margin-top: 19px;
+    border-radius: 20px;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitulo-principal,.subtitulo-conbate{
+    color: #B31312;
+    font-size: 30px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background: #f3d908;
+    height: 38px;
+    width: 332px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjetas{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon{
+    width: 246px;
+    height: 225px;
+    background: #f3d908;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 3px solid black;
+    display: flex;
+}
+
+.tarjeta-de-mokepon img{
+    width: 150px;
+}
+
+#boton-mascotas{
+    width: 207px;
+    height: 49px;
+    border-radius: 20px;
+    background-color: blue;
+    border: 2px dotted white;
+    color: white;
+    font-family: Potta One, serif;
+    margin-top: 30px;
+    font-size: 30px;    
+}
+
+input{
+ display: none;
+}
+
+input:checked + label{
+    background: orange;
+}
+
+
+.cuadro-medidor-vidas{
+    display: grid;
+    color: white;
+    grid-template-columns:20px 140px 420px 140px 20px    
+}
+
+#mascota-jugador , #mascota-oponente{
+    background: yellow;
+    border-radius: 20px;
+    border: 3px solid black;
+    height: 23px;
+    width: 110px;
+    color: #B31312;
+    display: flex;
+    justify-content: center;
+    font-size: 19px;
+    align-items: center;
+    margin: 0px;
+}
+
+ 
+#vidas-jugador, #vidas-oponente {
+    background: aliceblue;
+    margin-top: 0px;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.cuadro-combate {
+    display: grid;
+    color: red;
+    grid-template-columns: 300px 30px 420px 30px 300px;
+    justify-items: center;
+    font-size: 25px;
+
+}   
+
+.img-combate{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.img-combate img{
+    width: 250px;
+}
+
+#mensajes-resultado{
+    background: blue;
+    border-radius: 50px;
+    width: 374px;
+    height: 101px;
+    display: flex;
+    margin-top: 166px;
+    font-size: 20px;
+    color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid white;
+}
+
+
+#boton-reiniciar{
+    border: none;
+    color: coral;;
+    font-family: Potta One, serif;
+    font-size: 19px;
+    background: transparent;
+}
+
+.boton-ataque{
+    background-color: #f3d908;
+    padding: 1px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px solid black;
+    width: 100px;
+    color: #B31312;
+    font-family: Potta One, serif;
+    font-size: 19px;
+    margin-top: 40px;
+
+}
+
+.boton-ataque:hover {
+    background-color: orange;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+}
+
+
+@media (max-width: 360px) {
+    .targetas{
+        flex-direction: column;
+    }
+}

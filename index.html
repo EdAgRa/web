@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>MOKEPON </title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <section id="seleccionar-mascota">
+            <h1 class="titulo-principal">MOKEPON</h1>
+            <h2 class="subtitulo-principal">Elige a tu Mascota:</h2>
+            <div class="tarjetas">
+                <input type="radio" name="mascota" id="ratigueya"/>
+                <label class="tarjeta-de-mokepon" for="ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="./assets/ratigueya.png" alt="Ratigueya">
+                </label>
+                <input type="radio" name="mascota" id="hipodoge"/>                            
+                <label class="tarjeta-de-mokepon" for="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="./assets/hipodoge.png" alt="Hipodoge">
+                </label>
+                <input type="radio" name="mascota" id="capipego"/>            
+                <label class="tarjeta-de-mokepon" for="capipego">
+                    <p>Capipego</p>
+                    <img src="./assets/capipego.png" alt="Capipego">
+                 </label>
+                
+            </div>
+            <button id="boton-mascotas">Seleccionar</button> 
+        </section>
+        <section id="seleccionar-ataque">
+            <h1 class="titulo-conbate">MOKEPON</h1>
+            <div class="cuadro-medidor-vidas">
+                <div class="margen-medidor-vidas_1"></div>
+                <div>
+                    <p id="mascota-jugador"></p>
+                    <p id="vidas-jugador" >3</p>
+                </div>
+                <div clas="separacion-medidor-vidas"></div>
+                <div>
+                    <p id="mascota-oponente"></p>                           
+                    <p id="vidas-oponente" >3</p>
+                </div>
+                <div class="margen-medidor-vidas_2"></div>
+            </div>
+           
+            <div class="cuadro-combate">
+                <div class="img-combate">
+                    <img id="img-jugador">                    
+                </div>
+                <div id="mensaje-ataque-jugador">
+                    <p id="ataque-jugador"></p>
+                </div>           
+                <div>   
+                    <section id="mensajes-resultado">
+                        <p id="resultado-encuentro">!!!Preparate!!!</p>
+                        <div id="reiniciar">
+                            <button id="boton-reiniciar">Reiniciar</button>
+                        </div>
+                    </section>
+                </div>    
+                <div id="mensaje-ataque-oponente"> 
+                    <p id="ataque-oponente"></p>
+                </div >
+                <div class="img-combate"> 
+                    <img id="img-oponente">
+                </div>
+
+            </div>
+ 
+            <div class="tarjetas-ataques">
+                <button id="boton-fuego" class="boton-ataque" >Fuego 🔥</button>
+                <button id="boton-agua" class="boton-ataque">Agua  💦</button>
+                <button id="boton-tierra" class="boton-ataque">Tierra 🌱</button>
+            </div>
+            <h2 class="subtitulo-conbate">Elige tu Ataque:</h2>
+        </section>
+        <script src="./js/mokepon.js"></script>
+    </body>
+</html>
