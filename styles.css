@@ -198,3 +198,174 @@ input:checked + label{
     border: 2px solid black;
     box-sizing: border-box;
 }
+
+/**/
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Potta+One&display=swap');
+
+html, body {
+    margin: 0;
+}
+
+body {
+    font-family: Potta One, serif;
+    background-color: #081c15;
+    background-image: url("./assets/fondo-selva.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* La selva queda pegada a la ventana, no al scroll del documento. */
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+#pantalla-inicio,
+#pantalla-juego {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-principal {
+    color: #B31312;
+    font-size: 40px;
+    background: #f3d908;
+    height: 44px;
+    width: 280px;
+    margin-top: 19px;
+    border-radius: 20px;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtitulo-principal,
+.texto-ayuda,
+#puntaje {
+    color: #B31312;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 3px solid black;
+    background: #f3d908;
+    padding: 6px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boton-jugar {
+    width: 207px;
+    height: 49px;
+    border-radius: 20px;
+    background-color: blue;
+    border: 2px dotted white;
+    color: white;
+    font-family: Potta One, serif;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+#tablero {
+    border: 3px solid black;
+    border-radius: 8px;
+    /* El fondo del <canvas> debe ser transparente.
+       Si pones un color aquí, tapa la selva DETRÁS del lienzo.
+       La limpieza de cada turno la hace JS con clearRect, no este CSS. */
+    background: transparent;
+}
+
+.tarjetas-ataques {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 420px;
+}
+
+.boton-ataque {
+    background-color: #f3d908;
+    padding: 1px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px solid black;
+    width: 120px;
+    color: #B31312;
+    font-family: Potta One, serif;
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.boton-ataque:hover {
+    background-color: orange;
+}
+
+#mensajes-resultado {
+    background: blue;
+    border-radius: 50px;
+    width: 374px;
+    min-height: 80px;
+    display: flex;
+    margin-top: 16px;
+    font-size: 18px;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+}
+
+#boton-reiniciar {
+    border: none;
+    color: coral;
+    font-family: Potta One, serif;
+    font-size: 19px;
+    background: transparent;
+}
+
+body.pagina-menu {
+    background-color: #1a1a2e;
+    background-image: url("./assets/fondo-index.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#pantalla-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.tarjetas-menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boton-menu {
+    width: 220px;
+    height: 56px;
+    border-radius: 20px;
+    background-color: blue;
+    border: 2px dotted white;
+    color: white;
+    font-family: Potta One, serif;
+    font-size: 28px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.boton-menu:hover {
+    background-color: orange;
+    color: #B31312;
+}
