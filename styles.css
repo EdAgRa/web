@@ -399,3 +399,7 @@ button#boton-ayuda {
     border: 3px solid black;
     background: #f3d908;
 }
+
+#guia-mokepon.oculto {
+    display: none;
+}

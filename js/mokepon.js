@@ -24,8 +24,6 @@ function iniciarJuego(){
     botonReiniciar.addEventListener('click',reiniciarJuego)
     let botonAyuda = document.getElementById('boton-ayuda')
     botonAyuda.addEventListener('click', mostrarOcultarAyuda)
-    let guiaMokepon = document.getElementById('guia-mokepon')
-    guiaMokepon.style.display = 'none'
     document.body.style.backgroundImage = 'url("../assets/fondo.jpg")'; 
     
     canbioFondoEsenario(0)
@@ -33,10 +31,10 @@ function iniciarJuego(){
 
 function mostrarOcultarAyuda(){
     let guiaMokepon = document.getElementById('guia-mokepon')
-    if (guiaMokepon.style.display == 'none'){
-        guiaMokepon.style.display = 'block'
+    if (guiaMokepon.classList.contains('oculto')){
+        guiaMokepon.classList.remove('oculto')
     } else {
-        guiaMokepon.style.display = 'none'
+        guiaMokepon.classList.add('oculto')
     }
 }
 
@@ -289,5 +287,5 @@ function pintarVidas(cantidad) {
     return calaveras + corazones
 }
 
-window.addEventListener('load',iniciarJuego)
+iniciarJuego()
 
