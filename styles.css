@@ -375,7 +375,7 @@ body.pagina-menu {
     color: #B31312;
 }
 
-#boton-ayuda {
+button#boton-ayuda {
     width: 160px;
     height: 40px;
     border-radius: 20px;
