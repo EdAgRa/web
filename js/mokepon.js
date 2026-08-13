@@ -22,9 +22,22 @@ function iniciarJuego(){
     botonTierra.addEventListener('click',ataqueTierra)
     let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click',reiniciarJuego)
+    let botonAyuda = document.getElementById('boton-ayuda')
+    botonAyuda.addEventListener('click', mostrarOcultarAyuda)
+    let guiaMokepon = document.getElementById('guia-mokepon')
+    guiaMokepon.style.display = 'none'
     document.body.style.backgroundImage = 'url("../assets/fondo.jpg")'; 
     
     canbioFondoEsenario(0)
+}
+
+function mostrarOcultarAyuda(){
+    let guiaMokepon = document.getElementById('guia-mokepon')
+    if (guiaMokepon.style.display == 'none'){
+        guiaMokepon.style.display = 'block'
+    } else {
+        guiaMokepon.style.display = 'none'
+    }
 }
 
 function selecionarMascotaJugador(){

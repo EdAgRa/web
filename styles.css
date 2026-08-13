@@ -365,23 +365,37 @@ body.pagina-menu {
 }
 
 .boton-volver {
-    width: 120px;
-    height: 36px;
-    margin: 10px 0;
-    border-radius: 15px;
-    background-color: blue;
-    border: 2px dotted white;
-    color: white;
+    color: black;
     font-family: Potta One, serif;
     font-size: 18px;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
 }
 
 .boton-volver:hover {
     background-color: orange;
     color: #B31312;
+}
+
+#boton-ayuda {
+    width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: blue;
+    border: 2px dotted white;
+    color: white;
+    font-family: Potta One, serif;
+    margin-top: 16px;
+    font-size: 22px;
+}
+
+#guia-mokepon {
+    max-width: 640px;
+    margin: 16px 20px 0 20px;
+    padding: 12px 16px;
+    color: #B31312;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    border-radius: 15px;
+    border: 3px solid black;
+    background: #f3d908;
 }
