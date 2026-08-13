@@ -22,7 +22,7 @@ function iniciarJuego(){
     botonTierra.addEventListener('click',ataqueTierra)
     let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click',reiniciarJuego)
-    document.body.style.backgroundImage = 'url("./assets/fondo.jpg")'; 
+    document.body.style.backgroundImage = 'url("../assets/fondo.jpg")'; 
     
     canbioFondoEsenario(0)
 }
@@ -180,11 +180,11 @@ function reiniciarJuego(){
 function canbioFondoEsenario(opcion){
     let imageFondo = []
     let opcionAleatorea
-    imageFondo [0] = './assets/fondo.png'
-    imageFondo [1] = './assets/escenario_cuadrilatero_1.png'
-    imageFondo [2] = './assets/escenario_cuadrilatero_2.png'
-    imageFondo [3] = './assets/escenario_cuadrilatero_3.png'
-    imageFondo [4] = './assets/escenario_cuadrilatero_4.png'
+    imageFondo [0] = '../assets/fondo.png'
+    imageFondo [1] = '../assets/escenario_cuadrilatero_1.png'
+    imageFondo [2] = '../assets/escenario_cuadrilatero_2.png'
+    imageFondo [3] = '../assets/escenario_cuadrilatero_3.png'
+    imageFondo [4] = '../assets/escenario_cuadrilatero_4.png'
     opcionAleatorea = aleatorio(1, 4)
     if (opcion == 1){
         document.body.style.backgroundImage = 'url("'+imageFondo [opcionAleatorea]+'")'; 
@@ -196,9 +196,9 @@ function canbioFondoEsenario(opcion){
 function imagenCombate(opcionImagen){
     let urlImage = []
     let respuetaImg
-    urlImage [0] = './assets/ratigueya.png'
-    urlImage [1] = './assets/hipodoge.png'
-    urlImage [2] = './assets/capipego.png'
+    urlImage [0] = '../assets/ratigueya.png'
+    urlImage [1] = '../assets/hipodoge.png'
+    urlImage [2] = '../assets/capipego.png'
     if (opcionImagen == 1){
         respuetaImg = urlImage [0] 
     }else if (opcionImagen == 2){
@@ -212,9 +212,9 @@ function imagenCombate(opcionImagen){
 function imagenFuera(opcionImagen){
     let urlImage = []
     let respuetaImg
-    urlImage [0] = './assets/ratigueya_out.png'
-    urlImage [1] = './assets/hipodoge_out.png'
-    urlImage [2] = './assets/capipego_out.png'
+    urlImage [0] = '../assets/ratigueya_out.png'
+    urlImage [1] = '../assets/hipodoge_out.png'
+    urlImage [2] = '../assets/capipego_out.png'
     if (opcionImagen == 1){
         respuetaImg = urlImage [0] 
     }else if (opcionImagen == 2){
@@ -228,9 +228,9 @@ function imagenFuera(opcionImagen){
 function imagenCombatePc(opcionImagen){
     let urlImage = []
     let respuetaImg
-    urlImage [0] = './assets/ratigueya_dark.png'
-    urlImage [1] = './assets/hipodoge_dark.png'
-    urlImage [2] = './assets/capipego_dark.png'
+    urlImage [0] = '../assets/ratigueya_dark.png'
+    urlImage [1] = '../assets/hipodoge_dark.png'
+    urlImage [2] = '../assets/capipego_dark.png'
     if (opcionImagen == 1){
         respuetaImg = urlImage [0] 
     }else if (opcionImagen == 2){
@@ -244,9 +244,9 @@ function imagenCombatePc(opcionImagen){
 function imagenFueraPc(opcionImagen){
     let urlImage = []
     let respuetaImg
-    urlImage [0] = './assets/ratigueya_dark_out.png'
-    urlImage [1] = './assets/hipodoge_dark_out.png'
-    urlImage [2] = './assets/capipego_dark_out.png'
+    urlImage [0] = '../assets/ratigueya_dark_out.png'
+    urlImage [1] = '../assets/hipodoge_dark_out.png'
+    urlImage [2] = '../assets/capipego_dark_out.png'
     if (opcionImagen == 1){
         respuetaImg = urlImage [0] 
     }else if (opcionImagen == 2){

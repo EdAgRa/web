@@ -201,8 +201,6 @@ input:checked + label{
 
 /**/
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Potta+One&display=swap');
-
 html, body {
     margin: 0;
 }
@@ -214,7 +212,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* La selva queda pegada a la ventana, no al scroll del documento. */
     background-attachment: fixed;
     min-height: 100vh;
 }
@@ -270,9 +267,6 @@ body {
 #tablero {
     border: 3px solid black;
     border-radius: 8px;
-    /* El fondo del <canvas> debe ser transparente.
-       Si pones un color aquí, tapa la selva DETRÁS del lienzo.
-       La limpieza de cada turno la hace JS con clearRect, no este CSS. */
     background: transparent;
 }
 
@@ -366,6 +360,28 @@ body.pagina-menu {
 }
 
 .boton-menu:hover {
+    background-color: orange;
+    color: #B31312;
+}
+
+.boton-volver {
+    width: 120px;
+    height: 36px;
+    margin: 10px 0;
+    border-radius: 15px;
+    background-color: blue;
+    border: 2px dotted white;
+    color: white;
+    font-family: Potta One, serif;
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.boton-volver:hover {
     background-color: orange;
     color: #B31312;
 }
