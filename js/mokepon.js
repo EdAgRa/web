@@ -1,7 +1,10 @@
 let ataqueJugador
 let ataqueOponente
-let vidasJugador   = 3
-let vidasOponente  = 3
+let mascotaJugador = 0
+let mascotaOponente = 0
+let vidasTotal   = 7
+let vidasJugador   = vidasTotal
+let vidasOponente  = vidasTotal
 
 function iniciarJuego(){
     
@@ -34,24 +37,26 @@ function selecionarMascotaJugador(){
     let inpuHipodoge = document.getElementById('hipodoge')
     let inputCaipego = document.getElementById('capipego')
     let spanMascotaJugador = document.getElementById('mascota-jugador')
-    let mascotaTurno
- 
+    
     if (inputRatigueya.checked){
         spanMascotaJugador.innerHTML = 'Ratigueya'
-        mascotaTurno = 1
+        mascotaJugador = 1
     } else if(inpuHipodoge.checked){
         spanMascotaJugador.innerHTML = 'Hipodoge' 
-        mascotaTurno = 2
+        mascotaJugador = 2
     } else if(inputCaipego.checked){
         spanMascotaJugador.innerHTML = 'Capipego'
-        mascotaTurno= 3
+        mascotaJugador = 3
     }else {
         alert('Selecciona una Mascota')
         reiniciarJuego()        
     }
+
     selecionarMascotaOponente()
     canbioFondoEsenario(1)
-    document.getElementById("img-jugador").src=imagenCombate(mascotaTurno);
+    document.getElementById("img-jugador").src=imagenCombate(mascotaJugador);
+    document.getElementById('vidas-jugador').innerHTML = pintarVidas(vidasJugador)
+    document.getElementById('vidas-oponente').innerHTML = pintarVidas(vidasOponente)
 
 }
 function selecionarMascotaOponente(){
@@ -65,8 +70,8 @@ function selecionarMascotaOponente(){
     }else {
         spanMascotaOponente.innerHTML = 'Capipego'
     }
-
-    document.getElementById("img-oponente").src=imagenCombate(mascotaAleatorio);
+    mascotaOponente = mascotaAleatorio
+    document.getElementById("img-oponente").src=imagenCombatePc(mascotaAleatorio);
 }
 
 function ataqueFuego(){
@@ -89,42 +94,53 @@ function ataqueAleatoreoOponete(){
     }else if (ataqueAleatorio == 2){
         ataqueOponente = 'Agua'
     }else {
-        ataqueOponente = 'Tierra '
+        ataqueOponente = 'Tierra'
     }
     conbate()
 }
+
 function conbate(){
     let spanVidasJugador = document.getElementById('vidas-jugador')
     let spanVidasOponenete = document.getElementById('vidas-oponente')
     
     if (ataqueJugador == ataqueOponente){
         crearMensaje("EMPATE")
+        vidasJugador--
+        vidasOponente--
+        spanVidasJugador.innerHTML = pintarVidas(vidasJugador)
+        spanVidasOponenete.innerHTML = pintarVidas(vidasOponente)
     } else if (ataqueJugador == 'Fuego' && ataqueOponente == 'Tierra' ){
         crearMensaje("GANASTE")
         vidasOponente--
-        spanVidasOponenete.innerHTML = vidasOponente    
+        spanVidasOponenete.innerHTML = pintarVidas(vidasOponente)
     } else if (ataqueJugador == 'Agua' && ataqueOponente == 'Fuego' ){
         crearMensaje("GANASTE")
         vidasOponente--
-        spanVidasOponenete.innerHTML = vidasOponente    
+        spanVidasOponenete.innerHTML = pintarVidas(vidasOponente)
     } else if (ataqueJugador == 'Tierra' && ataqueOponente == 'Agua' ){
         crearMensaje("GANASTE")
         vidasOponente--
-        spanVidasOponenete.innerHTML = vidasOponente    
+        spanVidasOponenete.innerHTML = pintarVidas(vidasOponente)
     }else {
         crearMensaje("PERDISTE")
         vidasJugador--
-        spanVidasJugador.innerHTML = vidasJugador    
+        spanVidasJugador.innerHTML = pintarVidas(vidasJugador)
     }
     revisarVidas()
 }
- function revisarVidas(){
-    if (vidasOponente == 0){
+function revisarVidas(){
+    if (vidasJugador == 0 && vidasOponente == 0){
+        document.getElementById('img-oponente').src = imagenFueraPc(mascotaOponente)
+        document.getElementById('img-jugador').src = imagenFuera(mascotaJugador)
+        crearMensajeFinal('🫣¡¡CHOQUE DE TITANES!!🫣') 
+    }else if (vidasOponente == 0){
+        document.getElementById('img-oponente').src = imagenFueraPc(mascotaOponente)
         crearMensajeFinal('🥳¡VENCISTE A TU OPONENTE!🥳') 
     }else if (vidasJugador == 0){
-        crearMensajeFinal('🤯Tu Oponente te vencio🤯')        
+        document.getElementById('img-jugador').src = imagenFuera(mascotaJugador)
+        crearMensajeFinal('-🤯-Tu Oponente te vencio-🤯-')
     }
- }
+}
 function crearMensaje(partida){
     let resultadoEncuentro = document.getElementById('resultado-encuentro')
     resultadoEncuentro.innerHTML = partida
@@ -134,6 +150,12 @@ function crearMensaje(partida){
     
     let resultadoAtaqueOponente = document.getElementById('ataque-oponente')
     resultadoAtaqueOponente.innerHTML = ataqueOponente
+
+    let lista = document.getElementById('historial-ataques')
+    let linea = document.createElement('p')
+    
+    linea.innerHTML = ataqueJugador + ' vs ' + ataqueOponente
+    lista.appendChild(linea)
 }
 function crearMensajeFinal(resultadoFinal){
     let sectionMensajes = document.getElementById('mensajes-resultado')
@@ -141,7 +163,6 @@ function crearMensajeFinal(resultadoFinal){
     let parrafo = document.createElement('p')
     resultadoEncuentro.innerHTML = resultadoFinal
     sectionMensajes.appendChild(parrafo)
-
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
     let botonAgua = document.getElementById('boton-agua')
@@ -165,9 +186,9 @@ function canbioFondoEsenario(opcion){
     imageFondo [3] = './assets/escenario_cuadrilatero_3.png'
     imageFondo [4] = './assets/escenario_cuadrilatero_4.png'
     opcionAleatorea = aleatorio(1, 4)
-     if (opcion == 1){
-       document.body.style.backgroundImage = 'url("'+imageFondo [opcionAleatorea]+'")'; 
-     }else{
+    if (opcion == 1){
+        document.body.style.backgroundImage = 'url("'+imageFondo [opcionAleatorea]+'")'; 
+    }else{
         document.body.style.backgroundImage = 'url("'+imageFondo [0]+'")'; 
     }
 }
@@ -179,7 +200,55 @@ function imagenCombate(opcionImagen){
     urlImage [1] = './assets/hipodoge.png'
     urlImage [2] = './assets/capipego.png'
     if (opcionImagen == 1){
-        respuetaImg = urlImage [0]
+        respuetaImg = urlImage [0] 
+    }else if (opcionImagen == 2){
+        respuetaImg = urlImage [1]
+    }else{
+        respuetaImg = urlImage [2]
+    }
+    return respuetaImg
+}
+
+function imagenFuera(opcionImagen){
+    let urlImage = []
+    let respuetaImg
+    urlImage [0] = './assets/ratigueya_out.png'
+    urlImage [1] = './assets/hipodoge_out.png'
+    urlImage [2] = './assets/capipego_out.png'
+    if (opcionImagen == 1){
+        respuetaImg = urlImage [0] 
+    }else if (opcionImagen == 2){
+        respuetaImg = urlImage [1]
+    }else{
+        respuetaImg = urlImage [2]
+    }
+    return respuetaImg
+}
+
+function imagenCombatePc(opcionImagen){
+    let urlImage = []
+    let respuetaImg
+    urlImage [0] = './assets/ratigueya_dark.png'
+    urlImage [1] = './assets/hipodoge_dark.png'
+    urlImage [2] = './assets/capipego_dark.png'
+    if (opcionImagen == 1){
+        respuetaImg = urlImage [0] 
+    }else if (opcionImagen == 2){
+        respuetaImg = urlImage [1]
+    }else{
+        respuetaImg = urlImage [2]
+    }
+    return respuetaImg
+}
+
+function imagenFueraPc(opcionImagen){
+    let urlImage = []
+    let respuetaImg
+    urlImage [0] = './assets/ratigueya_dark_out.png'
+    urlImage [1] = './assets/hipodoge_dark_out.png'
+    urlImage [2] = './assets/capipego_dark_out.png'
+    if (opcionImagen == 1){
+        respuetaImg = urlImage [0] 
     }else if (opcionImagen == 2){
         respuetaImg = urlImage [1]
     }else{
@@ -190,6 +259,21 @@ function imagenCombate(opcionImagen){
 
 function aleatorio(min, max){
     return Math.floor(Math.random()*(max - min + 1 )+min)
+}
+
+function pintarVidas(cantidad) {
+    let corazones = ''
+    let calaveras = ''
+    let i = 0
+    while (i < cantidad) {
+        corazones = corazones + '❤️'
+        i++
+    }
+    while (i < vidasTotal) {
+        calaveras = calaveras + '💀'
+        i++
+    }
+    return calaveras + corazones
 }
 
 window.addEventListener('load',iniciarJuego)

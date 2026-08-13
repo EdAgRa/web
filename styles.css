@@ -101,9 +101,7 @@ input:checked + label{
     margin: 0px;
 }
 
- 
 #vidas-jugador, #vidas-oponente {
-    background: aliceblue;
     margin-top: 0px;
     color: black;
     display: flex;
@@ -113,7 +111,7 @@ input:checked + label{
 .cuadro-combate {
     display: grid;
     color: red;
-    grid-template-columns: 300px 30px 420px 30px 300px;
+    grid-template-columns: 300px 80px 320px 80px 300px;
     justify-items: center;
     font-size: 25px;
 
@@ -135,7 +133,7 @@ input:checked + label{
     width: 374px;
     height: 101px;
     display: flex;
-    margin-top: 166px;
+    margin-top: 10px;
     font-size: 20px;
     color: white;
     flex-direction: column;
@@ -163,7 +161,7 @@ input:checked + label{
     color: #B31312;
     font-family: Potta One, serif;
     font-size: 19px;
-    margin-top: 40px;
+    margin-top: 0px;
 
 }
 
@@ -182,4 +180,21 @@ input:checked + label{
     .targetas{
         flex-direction: column;
     }
+}
+
+#historial-ataques {
+    max-height: 360px;
+    overflow-y: auto;
+    color: #B31312;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#historial-ataques p {
+    margin: 2px 0;
+    background: #f3d908;
+    border-radius: 15px;
+    border: 2px solid black;
+    box-sizing: border-box;
 }
